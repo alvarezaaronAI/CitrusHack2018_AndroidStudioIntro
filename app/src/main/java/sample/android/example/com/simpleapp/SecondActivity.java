@@ -16,12 +16,22 @@ public class SecondActivity extends AppCompatActivity {
         int i = getIntent().getIntExtra("User",0);
         Toast.makeText(this, "User" + i, Toast.LENGTH_SHORT).show();
         Button bt2 = findViewById(R.id.btClickedMe);
+        Button bt3 = findViewById(R.id.btGoBack);
         bt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(SecondActivity.this, "You Clicked Me Again", Toast.LENGTH_SHORT).show();
-                Intent int2 = new Intent(SecondActivity.this, MainActivity.class);
+                Intent int2 = new Intent(SecondActivity.this, LoginActivity.class);
+                startActivity(int2);
 
+
+            }
+        });
+        bt3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent int3 = new Intent(SecondActivity.this,MainActivity.class);
+                startActivity(int3);
             }
         });
     }
